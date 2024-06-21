@@ -1,0 +1,116 @@
+body {
+    font-family: 'Baloo 2', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #ffecd2;
+    animation: backgroundColorChange 5s infinite;
+    overflow: hidden; /* Impede barras de rolagem */
+}
+
+@keyframes backgroundColorChange {
+    0% { background-color: #ffecd2; }
+    50% { background-color: #fcb69f; }
+    100% { background-color: #ffecd2; }
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 3em;
+    color: #ff6363;
+    text-shadow: 2px 2px #fcb69f;
+    animation: textShadowPulse 2s infinite;
+}
+
+@keyframes textShadowPulse {
+    0%, 100% { text-shadow: 2px 2px #fcb69f; }
+    50% { text-shadow: 4px 4px #942020; }
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1.5em;
+    margin: 0 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+#yesButton {
+    background-color: #ff6363;
+    color: white;
+}
+
+#yesButton:hover {
+    background-color: #ff5252;
+    transform: scale(1.1);
+}
+
+#noButton {
+    background-color: #ff6363;
+    color: white;
+    position: relative;
+}
+
+#noButton:hover {
+    background-color: #ff5252;
+    transform: scale(1.1);
+}
+
+#videoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden; /* Impede barras de rolagem */
+    z-index: 10; /* Coloca o vídeo acima das imagens flutuantes */
+}
+
+#videoElement {
+    width: 40%;
+    height: auto;
+}
+
+@keyframes fastBackgroundColorChange {
+    0% { background-color: #ffcccb; }
+    25% { background-color: #ccffcc; }
+    50% { background-color: #ccccff; }
+    75% { background-color: #ffffcc; }
+    100% { background-color: #ffcccb; }
+}
+
+@keyframes floatAndRotate {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    50% {
+        transform: translate(50px, -50px) rotate(180deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(360deg);
+    }
+}
+
+.floating-image {
+    position: absolute;
+    width: 100px;
+    height: auto;
+    animation: floatAndRotate 5s infinite linear;
+    pointer-events: none; /* Impede interação com as imagens flutuantes */
+    z-index: 5; /* Coloca as imagens flutuantes abaixo do vídeo */
+}
